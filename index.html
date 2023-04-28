@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tabs</title>
+    <link rel="stylesheet" type="text/css" href="tabs.css">
+   
+</head>
+
+<body style="padding: 20px">
+    <h1 class="title">Tabs using htms,css and js</h1>
+    <div class="tabContainer">
+        <div class="buttonContainer">
+            <button onclick="showPanel(0,'#f44336')">Tab 1</button>
+            <button onclick="showPanel(1,'#4caf50')">Tab 2</button>
+            <button onclick="showPanel(2,'#2196f3')">Tab 3</button>
+            <button onclick="showPanel(3,'#ff5722')">Tab 4</button>
+        </div>
+        <div class="tabPanel">Tab 1:Content</div>
+        <div class="tabPanel">Tab 2:Content</div>
+        <div class="tabPanel">Tab 3:Content</div>
+        <div class="tabPanel">Tab 4:Content</div>
+    </div>
+
+    <script type="text/javascript">
+        var tabButtons = document.querySelectorAll(".tabContainer .buttonContainer button");
+        var tabPanels = document.querySelectorAll(".tabContainer  .tabPanel");
+
+        function showPanel(panelIndex, colorCode) {
+            tabButtons.forEach(function (node) {
+                node.style.backgroundColor = "";
+                node.style.color = "";
+            });
+            tabButtons[panelIndex].style.backgroundColor = colorCode;
+            tabButtons[panelIndex].style.color = "blue";
+            tabPanels.forEach(function (node) {
+                node.style.display = "none";
+            });
+            tabPanels[panelIndex].style.display = "block";
+            tabPanels[panelIndex].style.backgroundColor = colorCode;
+        }
+        showPanel(0, '#f44336');
+
+
+
+    </script>
+</body>
+
+</html>
